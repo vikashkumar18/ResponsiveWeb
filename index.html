@@ -23,31 +23,195 @@
 </head>
 <body>
 	<div class="container">
-	<div id="source" class="imgcontainer">
-		<div class="box src" draggable="true">
-			<img src="images/1.JPG">
+		<header>MEGADEALS
+		</header>
+		<section class="searchArea">
+			<select id="locality" tabindex="1">
+			      <option value="0" selected="selected">Locality</option>
+			      <option value="1">A</option>
+					<option value="2">B</option>
+					<option value="3">C</option>
+					<option value="4">D</option>
+					<option value="5">E</option>
+					<option value="6">F</option>
+			   </select>
+		 <select id="type" tabindex="2">
+			    <option value="1" selected="selected">Type</option>
+			   		 <option value="2">Pub</option>
+					<option value="3">OutDoor</option>
+					<option value="4">Fine-Dine</option>
+			 </select>
+			 <input type="text" id="restaurantName" placeHolder="Restaurant Name" tabindex="3"/>
+			<a  class="myButton" id="find" tabindex="4"> Find a Deal</a>
+			<div style="clear:both;"></div>
+		</section>
+		<article>
+			<h1>Find best restaurant deals in town and book table</h1>
+			<h2>Reservation is free! We want you to enjoy your time.</h2>
+		</article>
+		<aside>
+			<div id="filter"><label>FILTER YOUR SEARCH</label></div>
+			<div class="type"><label>Cuisine</label></div>
+		
+			<ul>
+				<li><a><input type="checkbox" class="cuisine"/><label class="cuisine-name">Afgani Style</label></a></li>
+				<li><a><input type="checkbox" class="cuisine"/><label class="cuisine-name">American</label></a></li>
+				<li><a><input type="checkbox" class="cuisine"/><label class="cuisine-name">Andhra</label></a></li>
+				<li><a><input type="checkbox" class="cuisine"/><label class="cuisine-name">Cafe</label></a></li>
+				<li><a><input type="checkbox" class="cuisine"/><label class="cuisine-name">French</label></a></li>
+				<li><a><input type="checkbox" class="cuisine"/><label class="cuisine-name">Italian</label></a></li>
+				<li><a><input type="checkbox" class="cuisine"/><label class="cuisine-name">Mexican</label></a></li>
+				<li><a><input type="checkbox" class="cuisine"/><label class="cuisine-name">Punjabi</label></a></li>
+			</ul>
+			<div class="type"><label>Budget</label></div>
+			<ul>
+				<li><a><input type="checkbox" class="budget"/><label class="budget-name">500-1000</label></a></li>
+				<li><a><input type="checkbox" class="budget"/><label class="budget-name">1000-1500</label></a></li>
+				<li><a><input type="checkbox" class="budget"/><label class="budget-name">1500-2000</label></a></li>
+				<li><a><input type="checkbox" class="budget"/><label class="budget-name">2000-5000</label></a></li>
+				<li><a><input type="checkbox" class="budget"/><label class="budget-name">5000-10000</label></a></li>
+				<li><a><input type="checkbox" class="budget"/><label class="budget-name">Above 10000</label></a></li>
+				
+			</ul>
+		
+		</aside>
+		<section class="page">
+			<div class="sort">
+				<h2>28 deals found</h2>
+				 <select id="sortType" tabindex="2">
+					 <option value="0" selected="selected">Most Popular</option>
+					 <option value="1">Highest Disc</option>
+					<option value="2">Newest</option>
+					
+					
+				</select>
+				<div style="clear:both;"></div>
+			</div>
+			<div id="results">
+				<div class="item">
+					<img src="images/1.JPG">
+					<figcaption>
+						<h4>Flat 20% Discount on Friday Special Dinner</h4>
+						<h5>Mainland China</h5>
+					</figcaption>
+					<div class="location">M.G.Road, Banglore</div>
+					<div class="discount">
+						<h5>up to</h5>
+						<h1>25%</h1>
+					</div>
+					<div class="booking">
+						<div class="feature">FEATURE</div>
+						<div class="btntxt">
+							<h5>Table Size: 10 to 15</h5>
+							<a  class="myButton" id="find" tabindex="4"> Book Table</a>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="images/2.JPG">
+					<figcaption><h4>Up to 40% Off Buffet Dinner at Barbeque Nation</h4>
+						<h5>Barbeque Nation</h5></figcaption>
+					<div class="location">Indiranagar, Banglore</div>
+					<div class="discount">
+						<h5>up to</h5>
+						<h1>40%</h1>
+					</div>
+					<div class="booking">
+						<div class="feature">FEATURE</div>
+						<div class="btntxt">
+							<h5>Table Size: 10 to 15</h5>
+							<a  class="myButton" id="find" tabindex="4"> Book Table</a>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="images/3.JPG">
+					<figcaption>
+						<h4>Up to 15% off Unlimited Kabab with Cocktail</h4>
+						<h5>Bhajori Manna</h5>
+					</figcaption>
+					<div class="location">Park Street,Kolkata</div>
+					<div class="discount">
+						<h5>up to</h5>
+						<h1>15%</h1>
+					</div>
+					<div class="booking">
+						<div class="feature">FEATURE</div>
+						<div class="btntxt">
+							<h5>Table Size: 10 to 15</h5>
+							<a  class="myButton" id="find" tabindex="4"> Book Table</a>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="images/4.JPG">
+					<figcaption><h4>Flat 50% Discount on Friday Special Dinner</h4>
+						<h5>Mainland China</h5></figcaption>
+					<div class="location">M.G.Road, Banglore</div>
+					<div class="discount">
+						<h5>up to</h5>
+						<h1>5%</h1>
+					</div>
+					<div class="booking">
+						<div class="feature">FEATURE</div>
+						<div class="btntxt">
+							<h5>Table Size: 10 to 15</h5>
+							<a  class="myButton" id="find" tabindex="4"> Book Table</a>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="images/5.JPG">
+					<figcaption><h4>Up to 56% Off Buffet Dinner at Barbeque Nation</h4>
+						<h5>Barbeque Nation</h5></figcaption>
+					<div class="location">Indiranagar, Banglore</div>
+					<div class="discount">
+						<h5>up to</h5>
+						<h1>10%</h1>
+					</div>
+					<div class="booking">
+						<div class="feature">FEATURE</div>
+						<div class="btntxt">
+							<h5>Table Size: 10 to 15</h5>
+							<a  class="myButton" id="find" tabindex="4"> Book Table</a>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img src="images/6.JPG">
+					<figcaption>
+						<h4>Up to 15% off Unlimited Kabab with Cocktail</h4>
+						<h5>Bhajori Manna</h5>
+					</figcaption>
+					<div class="location">Park Street,Kolkata</div>
+					<div class="discount">
+						<h5>up to</h5>
+						<h1>25%</h1>
+					</div>
+					<div class="booking">
+						<div class="feature">FEATURE</div>
+						<div class="btntxt">
+							<h5>Table Size: 10 to 15</h5>
+							<a  class="myButton" id="find" tabindex="4"> Book Table</a>
+						</div>
+					</div>
+				</div>
+				<div style="clear:both"></div>
+			</div>
+		</section>
+
+	</div>
+	<footer>
+		<div class="empty"></div>
+		<div class="links">
+		<a id="contact">Contact Us</a>
+		<a id="company">Company</a>
+		<a id="support">Support</a>
 		</div>
-		  <div class="box " draggable="true">
-		  	<img src="images/2.JPG">
-		  </div>
-		  <div class="box " draggable="true">
-		  	<img src="images/3.JPG">
-		  </div>
-		  <div class="box " draggable="true">
-		  	<img src="images/4.JPG">
-		  </div>
-		  <section style="clear:both"></section>
-	</div>
-	<div id="destination" class="imgcontainer">
-		<div class="box" draggable="true"></div>
-		  <div class="box" draggable="true"></div>
-		  <div class="box" draggable="true"></div>
-		  <div class="box" draggable="true"></div>
-		  <section style="clear:both"></section>
-	</div>
-	</div>
-	
+		<div id="social">
+			
+		</div>
+	</footer>
 	
 </body>
-<script src="javascripts/dragdrop.js"></script> 
 </html>

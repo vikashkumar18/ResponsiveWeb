@@ -9,7 +9,7 @@ $background-color-maindisplay:#EDEDED;
 
 $fontcolorgray:#999999;
 $figcaption:#2561A8;
-$grids:12;
+$grid:12;
 
 $mobile:max-width 320px;
 $tab:max-width 760px;
@@ -42,11 +42,32 @@ $bigScreen:min-width 760px;
 	
 }
 
+@mixin scrollableList($ul-hight:auto,$li-height:30px,$label-pad:10px ){
+	ul{
+		height: $ul-hight;
+		overflow:auto;
+		li{
+			display: block;
+			height: $li-height;
+			line-height: $li-height;
+			input{
+				vertical-align: middle;
+			}
+			a{
 
+				display: inline-block;
+			}
+			label{
+				vertical-align: middle;
+				padding-left:$label-pad;
+			}
+		}
+	}
+}
 
 body{
 	//background-color: $background-color-body;
-	@include background-grid;
+	//@include background-grid;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -83,44 +104,388 @@ h1,h2,h3,h4,h5,h6{
  .container{
  	margin:0 auto;
  	width:100%;
- 	@include background-grid;
+ 	
  	
  }
 
- .box{
- 	float:left;
- 	width: 20%;
- 	margin: 50px 2.5% 50px 2.5%;
+ header{
+ 	height: 70px;
+ 	line-height: 70px;
+ 	text-align: left;
+ 	color: white;
+ 	padding: 0px 20px 0px 20px;
+ 	font-size: 2em;
+ 	@include breakpoint($mobile){
+ 		text-align: center;
+ 		font-size: 1em;
+ 		height: 50px;
+ 		line-height: 50px;
+ 	}
+ 	background-color:black;
+ }
+
+ 
+
+ .myButton {
+     
+     @include shadow(-50px,-50px,0px,-50px,#29bbff,#2dabf9,inset);
+     cursor: pointer;
+     border: 2px solid white;
+     display:inline-block;
+     color:#ffffff;
+     font-family:arial;
+     font-size:16px;
+     font-weight:normal;
+     padding:9px 43px;
+     margin: 10px 0px;
+     text-decoration:none;
+     text-align: center;
+     text-shadow:0px 2px 3px #263666;
+     
+ }
+ .myButton:hover {
+     
+     background-color:#0688fa;
+ }
+ .myButton:active {
+     position:relative;
+     top:1px;
+ }
+
+ .searchArea{
+ 	
+ 	display: block;
+ 	padding: 0 20px;
+ 	//height:80px;
+ 	background-color:$background-color-searcharea;
+ 	
+
+ 	select {
+ 	   width: 240px;
+ 	   height: 42px;
+ 	   line-height: 42px;
+
+ 	   margin:10px 0px;
+ 	   overflow: hidden;
+ 	   background-color:#ffffff;
+ 	   box-shadow: inset 0px 1px 1px 1px #A1C8F3;
+ 	  // background: url(new_arrow.png) no-repeat right #ddd;
+ 	   border: none;
+ 	   //-webkit-appearance: none;
+		//-moz-appearance: none; 
+		//appearence:none;
+		@include breakpoint($mobile){
+			height: 32px;
+			line-height: 32px;
+		}
+
+ 	   }
+	#locality{
+		
+	@include grid-span(2,1,8);
+
+	@include breakpoint($tab){
+		@include grid-span(2,1,4);	
+	}
+	@include breakpoint($mobile){
+		@include grid-span(2,1,2);
+		margin:4px 0px 2px 0px;
+	}
+
+	}
+	#type{
+		
+		@include grid-span(2,3,8);
+		@include breakpoint($tab){
+	@include grid-span(2,3,4);
+		@include breakpoint($mobile){
+			@include grid-span(2,1,2);
+			margin:2px 0px 2px 0px;
+			clear:left;	
+		}	
+	}
+	}
+
+	#restaurantName{
+		height: 42px;
+		margin:10px 0px;
+		overflow: hidden;
+		background-color:#ffffff;
+		padding:5px;
+		border:none;
+		//including boxshadow
+		@include shadow(0px,1px,1px,1px,#A1C8F3,#ffffff,inset);
+		@include grid-span(2,5,8);
+		@include breakpoint($tab){
+		@include grid-span(2,1,4);
+
+		clear:left;
+
+		}
+		@include breakpoint($mobile){
+			@include grid-span(2,1,2);
+			height: 32px;
+			margin:2px 0px 2px 0px;
+			clear:left;	
+		}
+	}
+
+	#find{
+		
+		@include grid-span(2,7,8);
+		@include breakpoint($tab){
+	@include grid-span(2,3,4);
+		
+	}
+		@include breakpoint($mobile){
+			@include grid-span(2,1,2);
+			margin:2px 0px 4px 0px;
+			clear:left;	
+		}
+	}
+ 	   
+ }
+
+ article{
+ 	background-color:#ffffff;
+ 	padding:15px 20px;
+ 	h2{
+ 		font-weight: normal;
+ 	}
+ 	@include breakpoint($tab){
+ 		h1{
+			font-size: 25px;
+ 		}
+ 		h2{
+ 			font-size: 20px;
+ 		}
+ 	}
+ 	@include breakpoint($mobile){
+ 		display: none;
+ 	}
+ }
+
+ aside{
+ 	@include grid-span(3,1,$gutter:0);
+ 	height: 100%;
+ 	background-color:$background-color-sidemenu;
+ 	@include scrollableList(200px);
+ 	@include breakpoint($mobile){
+ 		display: none;
+ 	}
+ 	
+ 	#filter{
+ 		font-size: 15px;
+ 		color: darkslategrey;
+ 		background-color:#E1DEE7;
+ 		border:1px solid #BFBFBF;
+ 		padding:10px 20px;
+
+ 	}
+	.type{
+		font-size: 15px;
+		color: darkslategrey;
+		background-color:#F1F1F6;
+		border:1px solid #BFBFBF;
+		padding:10px 20px;
+	}
+ }
+
+ .page{
+ 	
+ 	@include grid-span(9,4, $gutter:0);
+ 	@include breakpoint($mobile){
+ 		@include grid-span(4,1,4);
+ 	}
+
+ 	//@include background-grid;
+ 	background-color:$background-color-maindisplay;
+ 	padding:0px 20px 0px 20px;
+ 	.sort{
+ 			height: 62px;
+ 			line-height: 62px;
+		h2{
+			color: $fontcolorgray;
+			float:left;
+			font-weight: normal;
+		}
+		
+		select{
+			 	width: 240px;
+			 	height: 42px;
+			 	line-height: 42px;
+		 	   margin:10px 0px;
+		 	   overflow: hidden;
+		 	   background-color:#ffffff;
+		 	   box-shadow: inset 0px 1px 1px 1px $background-color-maindisplay;
+		 	  // background: url(new_arrow.png) no-repeat right #ddd;
+		 	   border: none;
+		 	   
+				-moz-appearance: none; 
+				appearence:none;
+			float: right;
+		}
+		@include breakpoint($mobile){
+			display: none;
+		}
+ 	}
+
+ 	#results{
+ 		
+ 		.item{
+ 			
+ 			 width:30%;
+ 			margin: 10px 1.4%;
+ 			
+ 			height: 300px;
+ 			border:1px solid #E1E1E1;
+ 			background-color:white;
+ 			float:left;
+ 			@include breakpoint($tab){
+ 				 width:45%;
+ 				margin: 10px 1.4%;
+ 			}
+ 			@include breakpoint($mobile){
+ 				 width:90%;
+ 				margin: 10px 5%;
+ 			}
+
+ 		}
+ 		img{
+ 			width: 100%;
+ 			height: 120px;
+ 			background-color:black;
+ 		}
+ 		figcaption{
+ 			padding:0px 10px;
+ 			width: 100%;
+ 			 height: 62px; 
+ 			h4{
+ 				color: $figcaption;
+ 				@include breakpoint($mobile){
+ 					font-weight: normal;
+ 				}
+ 			}
+ 		}
+ 		.location{
+ 			color:$fontcolorgray;
+ 			height: 18px;
+ 			line-height: 18px;
+ 			padding:0px 10px;
+ 			font-size: 12px;
+ 		}
+
+ 		.discount{
+ 			margin-top: 20px;
+ 			@include grid-span(5,2,16);
+
+ 			height:80px;
+			//line-height: 80px;
+ 			border:1px solid gray;
+ 			h1{
+ 				font-weight: normal;
+ 			}
+ 			
+ 			@include borderRadius(4px);
+			padding:10px 0px 10px 5px;
+			@include shadow(2px,2px,2px,0px,gray,#f8f8f8);
+ 			
+
+ 		}
+ 		.booking{
+ 			//@include background-grid;
+ 			margin-top: 7px;
+ 			@include grid-span(9,7,16);
+ 			height:70px;
+ 			
+ 			.feature{
+ 				color: $fontcolorgray;
+ 				height: 15px;
+ 				line-height: 15px;
+ 				font-size: 13px;
+ 				text-align: right;
+ 			}
+ 			.btntxt{
+ 				h5{
+ 					text-align: right;
+ 					font-weight: normal;
+ 					margin: 3px 0px;
+ 				}
+ 				.myButton{
+ 					@include grid-span(9,4);
+ 					margin-top: 0px;
+ 					margin-bottom: 0px;
+ 					border:0px;
+ 					@include borderRadius(3px);
+ 					padding:6px 8px 6px 8px;
+ 					-webkit-box-shadow:none;
+ 					-moz-box-shadow:none;
+ 					box-shadow:none;
+ 					@include breakpoint($mobile){
+ 						font-size: 13px;
+ 					}
+ 					@include breakpoint($tab){
+ 						font-size: 15px;
+ 					}
+
+ 				}
+ 				height: 55px;
+ 			}
+ 		}
+ 	}
+
+ } 
+
+footer{
+	@include grid-span(12,1);
+	background-color:#2F3D58;
+	height:100px;
+	text-align:right;
+	color: #ffffff;
+	font-size:1em;
+	.empty{
+		height: 50px;
+		@include grid-span(9,1);
+
+	}
+	.links{
+		height: 50px;
+		line-height: 50px;
+		@include grid-span(9,1);
+		text-align:right;
+		clear:left;
+		#contact{
+			@include grid-span(4,1);
+			font-size: 2em;
+			@include breakpoint($tab){
+				display: none;
+			}
+			@include breakpoint($mobile){
+				display: none;
+			}
+		}
+		#company{
+			@include grid-span(4,5);
+			@include breakpoint($tab){
+				@include grid-span(6,1);
+			}
+			@include breakpoint($mobile){
+				display: none;
+			}
+		}
+		#support{
+			@include grid-span(4,9);
+			@include breakpoint($tab){
+				@include grid-span(6,7);
+			}
+			@include breakpoint($mobile){
+				display: none;
+			}
+		}
+	}
 	
- 	height:200px;
- 	border: 1px solid black;
- }
-
- #source{
- 	height:300px;
- 	//line-height: 100px;
- 	margin:10px 10px 5px 10px;
- 	border:1px solid gray;
- }
-
- #destination{
- 	height:300px;
- 	//line-height: 100px;
- 	margin:10px 10px 5px 10px;
- 	border:1px solid gray;
- }
-
- img{
- 	width:100%;
- 	height:198px;
- }
-
-.over{
-	border: 1px dashed gray;
+	#social{
+		@include grid-span(3,10);
+		
+	}
 }
- 
-
- 
- 
- 
-
