@@ -1,0 +1,126 @@
+@import "normalize.css";
+@import "compass";
+@import "breakpoint";
+@import "singularitygs";
+$background-color-body:#ffffff;
+$background-color-sidemenu:#ffffff;
+$background-color-searcharea:#A1C8F3;
+$background-color-maindisplay:#EDEDED;
+
+$fontcolorgray:#999999;
+$figcaption:#2561A8;
+$grids:12;
+
+$mobile:max-width 320px;
+$tab:max-width 760px;
+$bigScreen:min-width 760px;
+
+*,*:before,*:after{
+	@include box-sizing ('border-box');
+}
+@mixin borderRadius($radius){
+	-moz-border-radius: $radius $radius $radius $radius;
+	-webkit-border-radius: $radius $radius $radius $radius;
+	border-radius:$radius $radius $radius $radius;;
+}
+@mixin shadow($h-shadow,$v-shadow,$blur,$spread,$color,$b-color,$shadow-type:none){
+	@if $shadow-type == none{
+		-moz-box-shadow: $h-shadow $v-shadow $blur $spread $color;
+
+		-webkit-box-shadow: $h-shadow $v-shadow $blur $spread $color;
+
+		box-shadow: $h-shadow $v-shadow $blur $spread $color;
+		background-color:$b-color;
+		}@else{
+			-moz-box-shadow:inset $h-shadow $v-shadow $blur $spread $color;
+
+			-webkit-box-shadow:inset $h-shadow $v-shadow $blur $spread $color;
+
+			box-shadow:inset $h-shadow $v-shadow $blur $spread $color;
+			background-color:$b-color;
+		}
+	
+}
+
+
+
+body{
+	//background-color: $background-color-body;
+	@include background-grid;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin:0 0;
+	
+}
+
+@include breakpoint($mobile){
+	h1{
+		font-size: 1.8em;
+	}
+	h2{
+		font-size: 1.5em;
+	}
+	h3{
+		font-size: 1.2em;
+	}
+	h4{
+		font-size: 0.9em;
+		
+	}
+	h5{
+		font-size:0.7em;
+	}
+	h6{
+		font-size:0.5em;
+	}
+
+}
+@include breakpoint($tab){
+	
+}
+
+ .container{
+ 	margin:0 auto;
+ 	width:100%;
+ 	@include background-grid;
+ 	
+ }
+
+ .box{
+ 	float:left;
+ 	width: 20%;
+ 	margin: 50px 2.5% 50px 2.5%;
+	
+ 	height:200px;
+ 	border: 1px solid black;
+ }
+
+ #source{
+ 	height:300px;
+ 	//line-height: 100px;
+ 	margin:10px 10px 5px 10px;
+ 	border:1px solid gray;
+ }
+
+ #destination{
+ 	height:300px;
+ 	//line-height: 100px;
+ 	margin:10px 10px 5px 10px;
+ 	border:1px solid gray;
+ }
+
+ img{
+ 	width:100%;
+ 	height:198px;
+ }
+
+.over{
+	border: 1px dashed gray;
+}
+ 
+
+ 
+ 
+ 
+
